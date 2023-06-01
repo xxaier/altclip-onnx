@@ -4,4 +4,4 @@ DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 set -ex
 
-./build.sh /app/export/onnx.sh
+./run.sh /app/export/onnx.sh
