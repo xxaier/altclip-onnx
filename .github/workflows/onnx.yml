@@ -5,11 +5,15 @@ on:
   push:
     branches: ['main']
     paths:
-      - 'img/**'
+      - 'export/**'
+      - 'misc/**'
+      - 'version'
   pull_request:
     branches: ['main']
     paths:
-      - 'img/**'
+      - 'export/**'
+      - 'misc/**'
+      - 'version'
 
 jobs:
   docker:
