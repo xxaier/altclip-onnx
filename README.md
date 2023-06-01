@@ -1,3 +1,5 @@
+# AltCLIP 的 ONNX 导出
+
 ## ONNX 是什么？
 
 ONNX(Open Neural Network Exchange)，开放神经网络交换，用于在各种深度学习训练和推理框架转换的一个中间表示格式。
@@ -17,6 +19,15 @@ ONNX(Open Neural Network Exchange)，开放神经网络交换，用于在各种�
 * `./build.sh` 在本地构建容器
 * `./bash.sh` 在本地进入容器的 bash，方便调试
 * `./export.sh` 运行容器，导出 onnx
+
+设置环境变量 MODEL ，可以修改测试、导出的模型 (参见[./export.sh](./export.sh)) 。
+
+默认的模型是 AltCLIP-XLMR-L-m18。
+
+其他可选的模型有：
+
+* AltCLIP-XLMR-L
+* AltCLIP-XLMR-L-m9
 
 ### 文件
 
