@@ -1,8 +1,8 @@
 FROM ubuntu:23.10
 
-ADD ./version version
-
 WORKDIR app
+
+ADD ./version.txt version
 
 RUN \
 sed -i s/ports.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
