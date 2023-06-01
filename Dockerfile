@@ -5,13 +5,13 @@ ADD ./version version
 WORKDIR app
 
 RUN apt-get update && \
-  apt-get install -y git pkg-config bash python3-full python3-pip &&\
+  apt-get install -y git pkg-config bash python3-full python3-pip python3-aiohttp &&\
   update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
   pip install \
   --break-system-packages \
   setuptools==66 \
   scipy transformers huggingface_hub packaging tqdm requests cython \
-  torch python3-aiohttp onnx
+  torch onnx
 
 # RUN git clone --depth=1 https://github.com/FlagAI-Open/FlagAI.git
 RUN git clone --depth=1 https://github.com/xxaier/FlagAI.git
