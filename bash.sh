@@ -11,6 +11,6 @@ docker run \
   -v $DIR/misc:/app/misc \
   -v $DIR/img:/app/img \
   -v $DIR/export:/app/export \
-  -v $DIR/out:/app/out \
+  -v $DIR/onnx:/app/onnx \
   -v $DIR/model:/app/model \
   -it --rm altclip-onnx ${@-/bin/bash}
