@@ -16,7 +16,8 @@ WORKDIR app
 
 ADD ./version version
 
-RUN git clone --depth=1 https://github.com/FlagAI-Open/FlagAI.git
+# RUN git clone --depth=1 https://github.com/FlagAI-Open/FlagAI.git
+RUN git clone --depth=1 https://github.com/xxaier/FlagAI.git
 
 
 # RUN cd FlagAI && python3 setup.py install
