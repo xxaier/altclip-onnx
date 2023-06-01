@@ -54,6 +54,7 @@ jobs:
 
       - name: onnx to .tar.bz2
         run: |
+          export ORG=${{secrets.DOCKER_ORG}}
           ./export/onnx.sh export/tar.bz2.py
 
       - name: Upload .tar.bz2 files
