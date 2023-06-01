@@ -2,7 +2,7 @@
 
 因为 flagai 的依赖复杂，所以构建容器便于导出
 
-`./export.sh`
+`./export.sh` 将导出 onnx
 
 ## onnxruntime
 
