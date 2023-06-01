@@ -51,3 +51,15 @@ jobs:
           tags: ${{secrets.DOCKER_ORG}}/altclip-onnx:latest, ${{secrets.DOCKER_ORG}}/altclip-onnx:${{env.VERSION}}
           cache-from: type=registry,ref=altclip-onnx
           cache-to: type=inline
+
+      - name: onnx to .tar.bz2
+        run: |
+          ./export/onnx.sh export/tar.bz2.py
+
+      - name: Upload .tar.bz2 files
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            onnx/AltCLIP-XLMR-L-m18.tar.bz2
+            onnx/AltCLIP-XLMR-L-m9.tar.bz2
+            onnx/AltCLIP-XLMR-L.tar.bz2
