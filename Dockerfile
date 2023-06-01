@@ -4,7 +4,11 @@ ADD ./version version
 
 WORKDIR app
 
-RUN apt-get update && \
+RUN 
+sed -i s/ports.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
+sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
+sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
+apt-get update && \
 apt-get install -y git pkg-config bash \
 python3-full python3-pip python3-aiohttp &&\
 update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
