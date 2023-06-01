@@ -1,3 +1,7 @@
+## ONNX 是什么？
+
+### ONNX 的优点
+
 ## 目录结构
 
 因为 flagai 的依赖复杂，所以构建容器便于导出
@@ -24,4 +28,4 @@ onnxruntime 有很多版本可以选择，见[onnxruntime](https://onnxruntime.a
 * INTEL 的 CPU `pip install onnxruntime-openvino`
 * 其他 CPU `pip install onnxruntime`
 
-运行 `./setup.sh` 会自动判断环境，选择安装合适的版本。
+运行 [./test/onnx/setup.sh](./test/onnx/setup.sh) 会自动判断环境，选择安装合适的版本。
