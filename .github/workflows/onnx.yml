@@ -3,13 +3,13 @@ name: 'onnx-export-docker'
 on:
   workflow_dispatch:
   push:
-    branches: ['main']
+    branches: ['main','master']
     paths:
       - 'export/**'
       - 'misc/**'
       - 'version.txt'
   pull_request:
-    branches: ['main']
+    branches: ['main','master']
     paths:
       - 'export/**'
       - 'misc/**'
