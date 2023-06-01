@@ -5,7 +5,7 @@ ADD ./version version
 WORKDIR app
 
 RUN apt-get update && \
-  apt-get install -y git pkg-config bash python3-full python3-pip python3-aiohttp &&\
+  apt-get install -y git pkg-config bash python3-full python3-pip python3-aiohttp python3-google-auth &&\
   update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
   pip install \
   --break-system-packages \
