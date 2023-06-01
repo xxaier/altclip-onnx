@@ -12,7 +12,7 @@ apt-get update && \
 apt-get install -y git pkg-config bash \
 python3-full python3-pip python3-aiohttp &&\
 update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
-pip install \
+pip install -i https://mirrors.aliyun.com/pypi/simple/ \
 --break-system-packages \
 setuptools==66 \
 urllib3==1.26.16 \
