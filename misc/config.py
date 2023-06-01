@@ -11,8 +11,10 @@ IMG_DIR = join(ROOT, 'img')
 MODEL_DIR = join(ROOT, 'model')
 
 MODEL_FP = join(MODEL_DIR, MODEL_NAME)
-ONNX_DIR = join(ROOT, 'onnx')
-ONNX_FP = join(ONNX_DIR, MODEL_NAME, 'onnx')
-PROCESS_DIR = join(ONNX_DIR, MODEL_NAME, 'process')
+
+ONNX_DIR = join(ROOT, 'onnx', MODEL_NAME)
+
+ONNX_FP = join(ONNX_DIR, 'onnx')
+PROCESS_DIR = join(ONNX_DIR, 'process')
 
 opset_version = 17
