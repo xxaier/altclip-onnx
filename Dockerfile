@@ -4,7 +4,7 @@ ADD ./version version
 
 WORKDIR app
 
-RUN 
+RUN \
 sed -i s/ports.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
 sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
 sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
