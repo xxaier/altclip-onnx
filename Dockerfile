@@ -4,16 +4,17 @@ WORKDIR app
 
 ADD ./version.txt version
 
+# sed -i s/ports.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
+# sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
+# sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
+# pip install -i https://mirrors.aliyun.com/pypi/simple/ \
+
 RUN \
-sed -i s/ports.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
-sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
-sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list &&\
 apt-get update && \
 apt-get install -y git pkg-config bash \
 python3-full python3-pip python3-aiohttp &&\
 update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
-pip install -i https://mirrors.aliyun.com/pypi/simple/ \
---break-system-packages \
+pip install --break-system-packages \
 setuptools==66.0.0 \
 urllib3==1.26.16 \
 scipy transformers huggingface_hub packaging \
