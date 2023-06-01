@@ -19,4 +19,4 @@ RUN git clone --depth=1 https://github.com/xxaier/FlagAI.git
 
 ADD os/ /
 
-RUN cd FlagAI && python setup.py install && pip uninstall urllib3 && python setup.py install
+RUN cd FlagAI && python setup.py install || ( pip uninstall urllib3 && python setup.py install )
