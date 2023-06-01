@@ -49,8 +49,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{secrets.DOCKER_ORG}}/altclip-onnx:latest, ${{secrets.DOCKER_ORG}}/altclip-onnx:${{env.VERSION}}
-          cache-from: type=registry,ref=altclip-onnx
-          cache-to: type=inline
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: onnx to .tar.bz2
         env:
@@ -58,7 +58,7 @@ jobs:
         run: |
           ./export.sh
 
-      - name: Upload .tar.bz2 files
+      - name: Upload .tar.bz2 To Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
