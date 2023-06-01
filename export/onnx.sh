@@ -5,3 +5,5 @@ cd $DIR
 set -ex
 
 ./down.py
+./onnx_export_processor.py
+./onnx_export.py
