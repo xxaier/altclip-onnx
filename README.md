@@ -79,3 +79,16 @@ onnxruntime 有很多版本可以选择，见[onnxruntime](https://onnxruntime.a
 * [./test/clip/clip_test.py](./test/clip/clip_test.py) 匹配图片向量和文本向量，进行零样本分类
 
 如果不想构建本地镜像，可以运行 `ORG=xxai ./bash.sh` 使用 [hub.docker.com 上的远程镜像](https://hub.docker.com/repository/docker/xxai/altclip-onnx)。
+
+## github action 上的容器自动构建
+
+在 github action 中配置秘钥，就可以实现自动构建推送容器
+
+* DOCKER_ORG
+  组织名
+* DOCKER_USERNAME
+  hub.docker.com 登录的用户
+* DOCKER_PASSWORD
+  hub.docker.com 登录的密码
+
+修改 [./version.txt](./version.txt) 可以设置推送容器的版本号。
