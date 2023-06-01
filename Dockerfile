@@ -23,5 +23,5 @@ torch onnx && apt-get clean -y
 RUN git clone --depth=1 https://github.com/xxaier/FlagAI.git
 
 ADD os/ /
-
+ENV PYTHONPATH=/app
 RUN cd FlagAI && python setup.py install
