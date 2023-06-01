@@ -25,7 +25,6 @@ jobs:
       -
         name: Set Version
         run: |
-          ls
           VERSION=$(cat version.txt)
           echo "::set-env name=VERSION::$VERSION"
       -
