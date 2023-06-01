@@ -4,6 +4,7 @@ DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
 set -ex
 
-./bash.sh MODEL=AltCLIP-XLMR-L export/onnx.sh
-./bash.sh MODEL=AltCLIP-XLMR-L-m9 export/onnx.sh
-./bash.sh export/onnx.sh
+cmd="export/onnx.sh && export/tar.xz.py"
+./bash.sh export MODEL=AltCLIP-XLMR-L && $cmd
+./bash.sh export MODEL=AltCLIP-XLMR-L-m9 && $cmd
+./bash.sh $cmd
