@@ -11,6 +11,7 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
 pip install \
 --break-system-packages \
 setuptools==66 \
+urllib3==1.26.16 \
 scipy transformers huggingface_hub packaging tqdm requests cython \
 torch onnx && apt-get clean -y
 
@@ -19,4 +20,4 @@ RUN git clone --depth=1 https://github.com/xxaier/FlagAI.git
 
 ADD os/ /
 
-RUN cd FlagAI && sh -c "python setup.py install || ( pip uninstall -y urllib3 && python setup.py install )"
+RUN cd FlagAI && python setup.py install
