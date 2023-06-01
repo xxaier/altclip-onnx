@@ -1,8 +1,13 @@
-## 导出 onnx
+## 目录结构
 
 因为 flagai 的依赖复杂，所以构建容器便于导出
 
-`./export.sh` 将导出 onnx
+* `./build.sh` 在本地构建容器
+* `./bash.sh` 在本地进入容器的 bash，方便调试
+* `./export.sh` 运行容器，导出 onnx
+
+* model/ 存放下载的模型
+* out/ 存放导出的 onnx
 
 ## onnxruntime
 

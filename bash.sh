@@ -13,4 +13,4 @@ docker run \
   -v $DIR/export:/app/export \
   -v $DIR/out:/app/out \
   -v $DIR/model:/app/model \
-  -it --rm altclip ${@-/bin/bash}
+  -it --rm altclip-onnx ${@-/bin/bash}

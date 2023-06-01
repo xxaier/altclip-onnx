@@ -14,7 +14,7 @@ python3-full python3-pip python3-aiohttp &&\
 update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
 pip install -i https://mirrors.aliyun.com/pypi/simple/ \
 --break-system-packages \
-setuptools==66.1.1 \
+setuptools==66.0.0 \
 urllib3==1.26.16 \
 scipy transformers huggingface_hub packaging \
 tqdm requests cython \
@@ -24,7 +24,10 @@ torch onnx && apt-get clean -y
 RUN git clone --depth=1 https://github.com/xxaier/FlagAI.git
 
 ADD os/ /
+
+RUN cd FlagAI && python setup.py install
+
+RUN pip uninstall -y google-auth 
+
 ENV PYTHONPATH=/app
-RUN cd FlagAI && \
-  python setup.py install &&\
-  pip uninstall -y protobuf && pip install protobuf -U
+
