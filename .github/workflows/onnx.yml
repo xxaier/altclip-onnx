@@ -23,6 +23,11 @@ jobs:
         name: Checkout
         uses: actions/checkout@v3
       -
+        name: set version
+        run: |
+          VERSION=$(cat version.txt)
+          echo "::set-env name=VERSION::$VERSION"
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       -
@@ -41,6 +46,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{secrets.DOCKER_ORG}}/altclip-onnx:latest
+          tags: ${{secrets.DOCKER_ORG}}/altclip-onnx:latest, ${{secrets.DOCKER_ORG}}/altclip-onnx:${{env.VERSION}}
           cache-from: type=registry,ref=${{secrets.DOCKER_ORG}}/altclip-onnx:latest
           cache-to: type=inline
