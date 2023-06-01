@@ -1,7 +1,8 @@
 FROM ubuntu:23.10
 
 RUN apt-get update && \
-  apt-get install -y git bash python3-full python3-pip &&\
+  apt-get install -y git bash python3-full python3-pip \
+  python3-numpy python-pandas &&\
   update-alternatives --install /usr/bin/python python /usr/bin/python3 1 &&\
   pip install \
   --break-system-packages \
