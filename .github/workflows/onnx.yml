@@ -23,8 +23,9 @@ jobs:
         name: Checkout
         uses: actions/checkout@v3
       -
-        name: set version
+        name: Set Version
         run: |
+          ls
           VERSION=$(cat version.txt)
           echo "::set-env name=VERSION::$VERSION"
       -
