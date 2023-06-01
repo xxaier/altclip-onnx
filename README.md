@@ -1,3 +1,10 @@
+## 导出 onnx
+
+因为 flagai 的依赖复杂，所以构建容器便于导出
+
+`./export.sh`
+
+## onnxruntime
 
 onnxruntime 有很多版本可以选择，见[onnxruntime](https://onnxruntime.ai/)。
 
