@@ -2,10 +2,15 @@
 
 DIR=$(realpath $0) && DIR=${DIR%/*}
 cd $DIR
-set -ex
-
+set -e
 mkdir -p out
 mkdir -p model
+
+NAME=altclip-onnx
+
+if ! [ -z $ORG ]; then
+  NAME=$ORG/$NAME
+fi
 
 docker run \
   -v $DIR/misc:/app/misc \
@@ -14,4 +19,4 @@ docker run \
   -v $DIR/onnx:/app/onnx \
   -v $DIR/model:/app/model \
   -v $DIR/test:/app/test \
-  -it --rm altclip-onnx ${@-/bin/bash}
+  -it --rm $NAME ${@-/bin/bash}
