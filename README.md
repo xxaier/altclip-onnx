@@ -93,4 +93,6 @@ text_features /= text_features.norm(dim=-1, keepdim=True)
 * DOCKER_PASSWORD
   hub.docker.com 登录的密码
 
+详情见[./.github/workflows/onnx.yml](./.github/workflows/onnx.yml)。
+
 修改 [./version.txt](./version.txt) 可以设置推送容器的版本号。
