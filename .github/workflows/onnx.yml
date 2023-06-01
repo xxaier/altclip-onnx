@@ -56,7 +56,7 @@ jobs:
         env:
           ORG: ${{secrets.DOCKER_ORG}}
         run: |
-          ./export/onnx.sh export/tar.bz2.py
+          ./export.sh
 
       - name: Upload .tar.bz2 files
         uses: softprops/action-gh-release@v1
