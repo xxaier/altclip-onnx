@@ -11,4 +11,4 @@ docker run \
   -v $DIR/img:/app/img \
   -v $DIR/export:/app/export \
   -v $DIR/out:/app/out \
-  -it --rm altclip /bin/bash
+  -it --rm altclip ${@-/bin/bash}
